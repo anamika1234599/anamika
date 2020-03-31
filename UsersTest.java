@@ -1,21 +1,20 @@
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.onlineexam.entity.Users;
-
-import javax.persistence.EntityManager;
+import com.bookstore.entity.Users;
 
 public class UsersTest {
 
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Users user1 = new Users();
 		user1.setEmail("anamika1397@gmail.com");
 		user1.setFullname("Anamika");
-		user1.setPassword("Helloworld");
-        
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("OnlineExaminationSystem");
+		user1.setPassword("Hello");
+		
+		
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("BookStoreWebsite");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
 		entityManager.getTransaction().begin();
@@ -24,7 +23,7 @@ public class UsersTest {
 		entityManager.close();
 		entityManagerFactory.close();
 		
-		System.out.println("A Users object was persisted");
+		System.out.println("A User object was persisted");
 
 	}
 
